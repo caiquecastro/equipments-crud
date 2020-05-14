@@ -1,7 +1,8 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
 
-/* GET users listing. */
+const router = express.Router();
+
+/* GET equipments listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
