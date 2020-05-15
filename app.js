@@ -13,12 +13,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/equipments', equipmentsRouter);
 
 // catch 404 and forward to error handler
-app.use(function notFound(req, res, next) {
+app.use(function notFound(_, _, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function errorHandler(err, req, res, next) {
+app.use(function errorHandler(err, _, res, _) {
   res.status(err.status || 500);
   res.json({
     message: err.message,
