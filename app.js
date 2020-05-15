@@ -1,6 +1,6 @@
-const createError = require('http-errors');
-const express = require('express');
 const logger = require('morgan');
+const express = require('express');
+const createError = require('http-errors');
 
 const equipmentsRouter = require('./routes/equipments');
 
@@ -13,14 +13,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/equipments', equipmentsRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function notFound(req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  // render the error page
+app.use(function errorHandler(err, req, res, next) {
   res.status(err.status || 500);
   res.json({
     message: err.message,

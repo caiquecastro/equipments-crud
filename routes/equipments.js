@@ -1,17 +1,9 @@
 const express = require('express');
-const Equipment = require('../models/Equipment');
+const EquipmentsController = require('../controllers/EquipmentsController');
 
 const router = express.Router();
 
 /* GET equipments listing. */
-router.get('/', async function(req, res, next) {
-  try {
-    const equipments = await Equipment.query();
-
-    res.json(equipments);
-  } catch (err) {
-    next(err);
-  }
-});
+router.get('/', EquipmentsController.index);
 
 module.exports = router;
