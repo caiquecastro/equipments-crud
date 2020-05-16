@@ -28,4 +28,6 @@ jobs:
     - run: yarn lint
     - name: Create database
       run: touch database.sqlite3
+    - name: Run database migrations
+      run: npx knex migrate:latest
     - run: yarn test
