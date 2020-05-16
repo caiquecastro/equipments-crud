@@ -30,6 +30,8 @@ jobs:
       run: touch database.sqlite3
     - name: Run database migrations
       run: npx knex migrate:latest
+      env:
+        DATABASE_URL: ./database.sqlite3
     - run: yarn test
       env:
         DATABASE_URL: ./database.sqlite3
