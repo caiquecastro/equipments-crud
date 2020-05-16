@@ -6,7 +6,7 @@ module.exports = {
     },
     useNullAsDefault: true,
     migrations: {
-      directory: './database/migrations'
+      directory: './database/migrations',
     },
   },
 };
