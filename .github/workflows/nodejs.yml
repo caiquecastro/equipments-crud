@@ -32,4 +32,4 @@ jobs:
       run: npx knex migrate:latest
     - run: yarn test
       env:
-        DATABASE_URL=./database.sqlite3
+        DATABASE_URL: ./database.sqlite3
