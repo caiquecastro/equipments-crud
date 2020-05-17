@@ -33,7 +33,7 @@ class Equipment extends BaseModel {
         wifi: {
           type: 'boolean',
         },
-      }
+      },
     };
   }
 }
