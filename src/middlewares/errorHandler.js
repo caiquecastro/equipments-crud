@@ -3,7 +3,7 @@ module.exports = function errorHandler(err, _, res, next) {
     next(err);
   }
 
-  res.status(err.status || 500);
+  res.status(err.statusCode || 500);
   res.json({
     message: err.message,
   });
