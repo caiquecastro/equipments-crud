@@ -26,14 +26,15 @@ jobs:
         node-version: ${{ matrix.node-version }}
     # - run: yarn install --frozen-lockfile
     - name: Install dependencies
-      run: yarn install
-    - run: yarn lint
+      run: npm i
+    - name: Lint code
+      run: npm run lint
     - name: Create database
       run: touch database.sqlite3
     - name: Run database migrations
       run: npx knex migrate:latest
       env:
         DATABASE_URL: ./database.sqlite3
-    - run: yarn test
+    - run: npm test
       env:
         DATABASE_URL: ./database.sqlite3
