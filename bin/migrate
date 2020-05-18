@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+const Database = require('../src/services/Database');
+
+async function run() {
+  return Database.migrate.latest()
+    .finally(() => Database.destroy());
+}
+
+run();
