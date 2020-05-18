@@ -21,6 +21,12 @@ Create the .env file. You can copy it from the example.
 $ cp .env.example .env
 ```
 
+Running the migrations.
+
+```bash
+$ yarn migrate
+```
+
 ### Running the application 
 
 ```

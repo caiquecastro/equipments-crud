@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon -r dotenv/config ./bin/www",
+    "migrate": "node -r dotenv/config ./bin/migrate",
     "test": "mocha",
     "lint": "eslint ."
   },
