@@ -34,6 +34,10 @@ jobs:
       run: npx knex migrate:latest
       env:
         DATABASE_URL: ./database.sqlite3
-    - run: npm test
+    - name: Run tests
+      run: npm test
       env:
         DATABASE_URL: ./database.sqlite3
+    - name: Build and push
+      id: docker_build
+      uses: docker/build-push-action@v2
