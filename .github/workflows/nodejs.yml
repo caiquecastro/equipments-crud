@@ -14,6 +14,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    container: node:14
+
     services:
       db:
         image: postgres
@@ -27,10 +29,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: 14.x
+    # - name: Use Node.js
+    #   uses: actions/setup-node@v1
+    #   with:
+    #     node-version: 14.x
     - name: Install dependencies
       run: npm ci
     - name: Lint code
@@ -38,10 +40,12 @@ jobs:
     - name: Run database migrations
       run: npx knex migrate:latest
       env:
+        DATABASE_HOST: db
         DATABASE_PASSWORD: postgres
     - name: Run tests
       run: npm test
       env:
+        DATABASE_HOST: db
         DATABASE_PASSWORD: postgres
     - uses: docker/setup-buildx-action@v1
     - name: Login to DockerHub
