@@ -1,11 +1,24 @@
 version: '3.7'
 
 services:
-    app:
-        build: .
-        command: yarn start
-        volumes:
-            - .:/usr/src/app
-        ports:
-            - 3000:3000
-        env_file: .env
+  app:
+    build: .
+    command: yarn start
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 3000:3000
+    env_file: .env
+  
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: equipments-crud-pass
+    ports:
+      - 5432:5432
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
