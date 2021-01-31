@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
@@ -50,6 +50,7 @@ jobs:
         DATABASE_NAME: equipments
         DATABASE_PASSWORD: postgres
   deploy:
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
