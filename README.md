@@ -51,7 +51,7 @@ $ cp .env.example .env
 ### Running the application
 
 ```
-$ docker-compose up -d
+$ docker compose up -d
 ```
 
 ### Running without docker compose
