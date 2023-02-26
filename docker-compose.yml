@@ -10,10 +10,13 @@ services:
     ports:
       - 3000:3000
     env_file: .env
+    networks:
+      - backend
   
   db:
     image: postgres
     environment:
+      POSTGRES_USER: equipments-crud
       POSTGRES_PASSWORD: equipments-crud-pass
     ports:
       - 5432:5432
