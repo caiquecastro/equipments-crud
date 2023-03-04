@@ -61,7 +61,7 @@ describe('Equipments API', () => {
         });
 
       assert.equal(response.status, 400);
-      assert.equal(response.body.message, 'model: is a required property');
+      assert.equal(response.body.message, 'model: must have required property \'model\'');
     });
 
     it('requires category to create an equipment', async () => {
@@ -72,7 +72,7 @@ describe('Equipments API', () => {
         });
 
       assert.equal(response.status, 400);
-      assert.equal(response.body.message, 'category: is a required property');
+      assert.equal(response.body.message, 'category: must have required property \'category\'');
     });
 
     it('requires valid category to create an equipment', async () => {
@@ -84,7 +84,7 @@ describe('Equipments API', () => {
         });
 
       assert.equal(response.status, 400);
-      assert.equal(response.body.message, 'category: should be equal to one of the allowed values');
+      assert.equal(response.body.message, 'category: must be equal to one of the allowed values');
     });
 
     it('requires ppm to be integer', async () => {
@@ -97,7 +97,7 @@ describe('Equipments API', () => {
         });
 
       assert.equal(response.status, 400);
-      assert.equal(response.body.message, 'ppm: should be integer');
+      assert.equal(response.body.message, 'ppm: must be integer');
     });
 
     it('requires ppm to be greater or equal to 0', async () => {
@@ -110,7 +110,7 @@ describe('Equipments API', () => {
         });
 
       assert.equal(response.status, 400);
-      assert.equal(response.body.message, 'ppm: should be >= 0');
+      assert.equal(response.body.message, 'ppm: must be >= 0');
     });
 
     it('requires ppm to be less or equal to 999999', async () => {
@@ -123,7 +123,7 @@ describe('Equipments API', () => {
         });
 
       assert.equal(response.status, 400);
-      assert.equal(response.body.message, 'ppm: should be <= 999999');
+      assert.equal(response.body.message, 'ppm: must be <= 999999');
     });
 
     it('requires consumption to be a number', async () => {
@@ -136,7 +136,7 @@ describe('Equipments API', () => {
         });
 
       assert.equal(response.status, 400);
-      assert.equal(response.body.message, 'consumption: should be number');
+      assert.equal(response.body.message, 'consumption: must be number');
     });
 
     it('requires consumption to be greater or equal to 0', async () => {
@@ -149,7 +149,7 @@ describe('Equipments API', () => {
         });
 
       assert.equal(response.status, 400);
-      assert.equal(response.body.message, 'consumption: should be >= 0');
+      assert.equal(response.body.message, 'consumption: must be >= 0');
     });
 
     it('requires consumption to be less or equal to 999999', async () => {
@@ -162,7 +162,7 @@ describe('Equipments API', () => {
         });
 
       assert.equal(response.status, 400);
-      assert.equal(response.body.message, 'consumption: should be <= 999999');
+      assert.equal(response.body.message, 'consumption: must be <= 999999');
     });
 
     it('requires wifi to be a boolean', async () => {
@@ -175,7 +175,7 @@ describe('Equipments API', () => {
         });
 
       assert.equal(response.status, 400);
-      assert.equal(response.body.message, 'wifi: should be boolean');
+      assert.equal(response.body.message, 'wifi: must be boolean');
     });
   });
 
