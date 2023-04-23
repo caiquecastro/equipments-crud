@@ -4,15 +4,14 @@
 
 ### Requirements
 
-* Node.js (v10+)
-* Yarn
+* Node.js (v18+)
 
 ### Installation
 
 Installing dependencies.
 
 ```bash
-$ yarn install
+$ npm install
 ```
 
 Create the .env file. You can copy it from the example.
@@ -24,7 +23,7 @@ $ cp .env.example .env
 Running the migrations.
 
 ```bash
-$ yarn migrate
+$ npm run migrate
 ```
 
 ### Running the application 
