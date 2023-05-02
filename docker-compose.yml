@@ -3,7 +3,7 @@ version: '3.7'
 services:
   app:
     build: .
-    command: yarn start
+    command: npm start
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
