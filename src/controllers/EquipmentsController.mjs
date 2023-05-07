@@ -1,6 +1,6 @@
-const Equipment = require('../models/Equipment');
+import Equipment from '../models/Equipment.mjs';
 
-exports.index = async function index(req, res, next) {
+export async function index(req, res, next) {
   try {
     const equipments = await Equipment.query();
 
@@ -8,9 +8,9 @@ exports.index = async function index(req, res, next) {
   } catch (err) {
     next(err);
   }
-};
+}
 
-exports.store = async function store(req, res, next) {
+export async function store(req, res, next) {
   try {
     const equipment = await Equipment.query().insert(req.body);
 
@@ -18,9 +18,9 @@ exports.store = async function store(req, res, next) {
   } catch (err) {
     next(err);
   }
-};
+}
 
-exports.show = async function show(req, res, next) {
+export async function show(req, res, next) {
   try {
     const equipment = await Equipment.query()
       .findById(req.params.id)
@@ -30,9 +30,9 @@ exports.show = async function show(req, res, next) {
   } catch (err) {
     next(err);
   }
-};
+}
 
-exports.update = async function update(req, res, next) {
+export async function update(req, res, next) {
   try {
     const equipment = await Equipment.query()
       .findById(req.params.id)
@@ -44,9 +44,9 @@ exports.update = async function update(req, res, next) {
   } catch (err) {
     next(err);
   }
-};
+}
 
-exports.destroy = async function destroy(req, res, next) {
+export async function destroy(req, res, next) {
   try {
     const equipment = await Equipment.query()
       .findById(req.params.id)
@@ -58,4 +58,4 @@ exports.destroy = async function destroy(req, res, next) {
   } catch (err) {
     next(err);
   }
-};
+}

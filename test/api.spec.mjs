@@ -1,12 +1,13 @@
-const chai = require('chai');
-const chaiHttp = require('chai-http');
-const helpers = require('./helpers');
-const Application = require('../src/app');
-const Database = require('../src/services/Database');
+import chai from 'chai';
+import chaiHttp from 'chai-http';
+import { createEquipment } from './helpers.mjs';
+import Application from '../src/app.mjs';
+import Database from '../src/services/Database.mjs';
 
 chai.use(chaiHttp);
 const { assert } = chai;
 
+before(() => Database.migrate.latest());
 beforeEach(() => Database('equipments').delete());
 after(() => Database.destroy());
 
@@ -181,7 +182,7 @@ describe('Equipments API', () => {
 
   describe('GET /equipments/:id', () => {
     it('fetches equipment details', async () => {
-      const equipment = await helpers.createEquipment({
+      const equipment = await createEquipment({
         model: 'Model B',
       });
 
@@ -197,7 +198,7 @@ describe('Equipments API', () => {
 
   describe('PATCH /equipments/:id', async () => {
     it('updates equipment', async () => {
-      const equipment = await helpers.createEquipment({
+      const equipment = await createEquipment({
         model: 'Model A',
       });
 
@@ -216,7 +217,7 @@ describe('Equipments API', () => {
 
   describe('DELETE /equipments/:id', async () => {
     it('removes an equipment', async () => {
-      const equipment = await helpers.createEquipment({
+      const equipment = await createEquipment({
         model: 'Model A',
       });
 

@@ -1,3 +1,3 @@
-const Config = require('./src/services/Config');
+import Config from './src/services/Config';
 
-module.exports = Config.get('database');
+export default Config.get('database');
