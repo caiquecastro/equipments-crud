@@ -1,9 +1,8 @@
-const logger = require('morgan');
-const express = require('express');
-const errorHandler = require('./middlewares/errorHandler');
-const notFoundMiddleware = require('./middlewares/notFound');
-
-const equipmentsRouter = require('./routes/equipments');
+import logger from 'morgan';
+import express from 'express';
+import errorHandler from './middlewares/errorHandler.mjs';
+import notFoundMiddleware from './middlewares/notFound.mjs';
+import equipmentsRouter from './routes/equipments.mjs';
 
 const app = express();
 
@@ -19,4 +18,4 @@ app.use(notFoundMiddleware);
 // error handler
 app.use(errorHandler);
 
-module.exports = app;
+export default app;

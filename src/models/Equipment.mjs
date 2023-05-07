@@ -1,4 +1,4 @@
-const BaseModel = require('./BaseModel');
+import BaseModel from './BaseModel.mjs';
 
 class Equipment extends BaseModel {
   static get tableName() {
@@ -38,4 +38,4 @@ class Equipment extends BaseModel {
   }
 }
 
-module.exports = Equipment;
+export default Equipment;

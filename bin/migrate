@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const Database = require('../src/services/Database');
+import Database from '../src/services/Database.mjs';
 
 async function run() {
   return Database.migrate.latest()

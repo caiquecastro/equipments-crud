@@ -1,4 +1,4 @@
-module.exports = function errorHandler(err, _, res, next) {
+export default function errorHandler(err, _, res, next) {
   if (res.headerSent) {
     next(err);
   }
@@ -7,4 +7,4 @@ module.exports = function errorHandler(err, _, res, next) {
   res.json({
     message: err.message,
   });
-};
+}
