@@ -4,9 +4,11 @@
  * Module dependencies.
  */
 
-const debug = require('debug')('equipments-crud:server');
-const http = require('http');
-const app = require('../src/app');
+import debug from 'debug';
+import http from 'http';
+import app from '../src/app.mjs';
+
+const appDebug = debug('equipments-crud:server');
 
 /**
  * Normalize a port into a number, string, or false.
@@ -47,7 +49,7 @@ function onListening() {
   const bind = typeof addr === 'string'
     ? `pipe ${addr}`
     : `port ${addr.port}`;
-  debug(`Listening on ${bind}`);
+  appDebug(`Listening on ${bind}`);
 }
 
 /**
@@ -65,11 +67,11 @@ function onError(error) {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      debug(`${bind} requires elevated privileges`);
+      appDebug(`${bind} requires elevated privileges`);
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      debug(`${bind} is already in use`);
+      appDebug(`${bind} is already in use`);
       process.exit(1);
       break;
     default:

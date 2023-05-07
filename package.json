@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "nodemon -r dotenv/config ./bin/www",
-    "migrate": "node -r dotenv/config ./bin/migrate",
+    "start": "nodemon -r dotenv/config ./bin/www.mjs",
+    "migrate": "node -r dotenv/config ./bin/migrate.mjs",
     "test": "mocha",
     "lint": "eslint ."
   },
