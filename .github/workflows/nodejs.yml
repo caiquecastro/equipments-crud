@@ -39,7 +39,7 @@ jobs:
     - name: Lint code
       run: npm run lint
     - name: Run database migrations
-      run: npx knex migrate:latest
+      run: node bin/migrate
       env:
         DATABASE_HOST: db
         DATABASE_USER: equipments
