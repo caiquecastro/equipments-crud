@@ -39,7 +39,7 @@ jobs:
     - name: Lint code
       run: npm run lint
     - name: Run database migrations
-      run: node bin/migrate
+      run: node bin/migrate.mjs
       env:
         DATABASE_HOST: db
         DATABASE_USER: equipments
